@@ -1,51 +1,51 @@
 vim.g.mapleader = " "
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
-vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
-
+-- Move highlighted text below
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- Move highlighted text above
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "Y", "yg$")
+-- Keep cursor in same place when joining lines
 vim.keymap.set("n", "J", "mzJ`z")
+
+-- Keep cursor in the middle when half page jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Keep search terms in the middle
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
--- greates remap ever
+-- Paste over text without losing current paste buffer
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
--- next greates remap ever : asbjornHaland
+-- Yank into system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
+-- Delete into void register
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
--- This sucks, but why?
+-- Keep changes made in vertical edit mode when pressin 'Ctrl+c'
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Q is EVIL
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmuxsessionizer<CR>")
-vim.keymap.set("n", "<leader>f", function()
-	vim.lsp.buf.format()
-end)
 
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- Quickfix navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- Replace current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- Set current file as executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
