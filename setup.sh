@@ -11,3 +11,5 @@ for DIR in ${DIRECTORIES[@]}; do
     stow -t ~ $DIR
 done
 
+echo "updating dconf settings"
+dconf load / < gnome/dconf-settings.ini
