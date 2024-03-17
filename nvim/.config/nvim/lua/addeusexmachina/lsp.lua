@@ -37,6 +37,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 
         -- Displays a function's signature information
+        bufmap('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
         bufmap('n', '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 
         -- Renames all references to the symbol under the cursor
