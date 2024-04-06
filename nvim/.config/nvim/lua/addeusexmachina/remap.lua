@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Move highlighted text below
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 -- Move highlighted text above
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 -- Keep cursor in same place when joining lines
 vim.keymap.set("n", "J", "mzJ`z")
