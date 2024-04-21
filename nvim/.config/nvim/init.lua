@@ -1,1 +1,2 @@
-require("addeusexmachina")
+require("core")
+require("lsp")
