@@ -10,7 +10,7 @@ local function start_lua_ls()
 
     vim.lsp.start({
         name = 'lua-language-server',
-        cmd = { 'lua-language-server' },
+        cmd = { os.getenv('HOME') .. '/.local/share/nvim/language-servers/luals/bin/lua-language-server' },
         root_dir = root_dir,
         init_options = { hostInfo = 'neovim' },
     })

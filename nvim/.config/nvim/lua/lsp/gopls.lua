@@ -10,7 +10,7 @@ local function start_gopls()
 
     vim.lsp.start({
         name = 'gopls',
-        cmd = { 'gopls' },
+        cmd = { os.getenv('HOME') .. '/.local/share/nvim/language-servers/gopls/bin/gopls' },
         root_dir = root_dir,
     })
 end
